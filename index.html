@@ -55,19 +55,24 @@
 
                 <!-- クイズ -->
                 <article>
-                    <section class="quiz">
-                        <h1>1.この地名はなんて読む?</h1>
-                        <img src="./img/quizes/takanawa.png" alt="高輪">
-                        <ul class="choices">
-                            <li class="choice" id="0-1-0" onclick="checkAnswer(0, 1, 0)">こうわ</li>
-                            <li class="choice" id="0-1-1" onclick="checkAnswer(0, 1, 1)">たかわ</li>
-                            <li class="choice" id="0-1-2" onclick="checkAnswer(0, 1, 2)">たかなわ</li>
-                            <div class="quiz-result" id="a-1">
-                                <p class="quiz-result-title"></p>
-                                <p class="quiz-result-description">正解は「たかなわ」です！</p>
+                    <script>
+                        document.write(`
+                        <section class="quiz">
+
+                            <h1>1.この地名はなんて読む?</h1>
+                            <img src="./img/quizes/takanawa.png" alt="高輪">
+                            <ul class ="choices">
+                            <li class ="choice" id="0-1-0" onclick="checkAnswer(0, 1, 0)">こうわ</li>
+                            <li class ="choice" id="0-1-1" onclick="checkAnswer(0, 1, 1)">たかわ</li>
+                            <li class ="choice" id="0-1-2" onclick="checkAnswer(0, 1, 2)">たかなわ</li>
+                            <div class ="quiz-result" id="a-1">
+                            <p class ="quiz-result-title"></p>
+                            <p class ="quiz-result-description">正解は「たかなわ」です！</p>
                             </div>
-                        </ul>
-                    </section>
+                            </ul>
+                        </section>
+                        `);
+                    </script>
                 </article>
             </div>
         </main>
