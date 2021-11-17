@@ -110,6 +110,9 @@ header .btn {
     background-color: #ff5128;
 }
 
+.choice.disabled {
+    pointer-events: none;
+}
 
 .quiz-result {
     display: none;

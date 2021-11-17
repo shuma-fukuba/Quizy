@@ -60,7 +60,7 @@
                             let choices = ``;
                             for (c of question.answers()) {
                                 console.log(c);
-                                choices += `<li class="choice" id="${c.num}" onclick="checkAnswer('${c.num}', ${c.isCorrect}, ${c.q_num})">${c.sel}</li>`;
+                                choices += `<li class="choice" id="${c.num}" onclick="checkAnswer('${c.num}', ${c.isCorrect}, ${c.q_num}); choiceDisabled(${question.num});">${c.sel}</li>`;
                             };
 
                             document.write(`
