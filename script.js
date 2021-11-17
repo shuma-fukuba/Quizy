@@ -8,23 +8,24 @@ function Question(name, correct, incre1, incre2, img) {
     this.num = q_num;
     this.getImgUrls = function(){
         return "./img/quizes/" + img;
-    }
+    };
     // 答えの番号を生成（ランダム実装はまだ）
     this.answers = function () {
-        cor_num = "0-" + String(q_num) + "-2";
-        incr1_num = "0-" + String(q_num) + "-1";
-        incre2_num = "0-" + String(q_num) + "-0";
-        const cor_choice = new Choice(cor_num, correct, true);
-        const inc_choice1 = new Choice(incr1_num, incre1, false);
-        const inc_choice2 = new Choice(incre2, incre2, false);
+        cor_num = "0-" + String(this.num) + "-2";
+        incr1_num = "0-" + String(this.num) + "-1";
+        incre2_num = "0-" + String(this.num) + "-0";
+        const cor_choice = new Choice(cor_num, correct, true, this.num);
+        const inc_choice1 = new Choice(incr1_num, incre1, false, this.num);
+        const inc_choice2 = new Choice(incre2_num, incre2, false, this.num);
         return [cor_choice, inc_choice1, inc_choice2];
-    }
+    };
 };
 
-function Choice(num, sel, isCorrect){
+function Choice(num, sel, isCorrect, q_num){
     this.num = num; //str
     this.sel = sel; //str
     this.isCorrect = isCorrect; //bool
+    this.q_num = q_num;
 }
 
 // questions はテスト用
@@ -42,12 +43,12 @@ const kogure = new Question("小榑", "こぐれ", "こしゃく", "こばく", 
 
 const questions = [takanawa, kameido, koujimachi, onarimon, todoroki, shakuji, zoushiki, okachimachi, shishibone, kogure];
 
-function checkAnswer(answer) { // Choice型
-    let element = document.getElementById(answer.num);
-    const result_id = "a-" + String(b);
+function checkAnswer(num, isCorrect, q) { // Choice型の各変数
+    const result_id = "a-" + String(q);
     let quiz_result = document.getElementById(result_id);
+    let element = document.getElementById(num);
     quiz_result.style.display = "block";
-    if (questions[question]) {
+    if (isCorrect) {
         // cssに正解クラスを追加
         element.classList.add("correct");
         let successed = quiz_result.getElementsByClassName("quiz-result-title");
