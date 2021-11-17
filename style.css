@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+}
+
+
+
+
+/*--- 共通パーツ ---*/
+.container {
+    max-width: 650px;
+    margin: auto;
+}
+
+/*--- header ---*/
+header {
+    display: block;
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    z-index: 99999;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 2%), 0 1px 2px 0 rgb(0 0 0 / 8%);
+    background-color: #fff;
+}
+
+.header-content {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-left {
+    align-items: center;
+}
+
+.header-left a {
+    display: block;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* ヘッダーのボタン */
+header .btn {
+    margin-right: 10px;
+    padding: 0 6px;
+    font-size: 11px;
+}
+
+
+
+/*--- main ---*/
+
+
+/* navbar */
+.nav-bar {
+
+}
+
+.nav-content {
+    display: inline-block;
+    text-align: center;
+    width: 25%;
+}
+
+.navbar img, .navbar a{
+    display: block;
+}
+
+
+/*--- クイズ内容  ---*/
+.quiz h1 {
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.quiz h1:after {
+    content: "";
+    margin-top: 10px;
+    display: block;
+    width: 90pt;
+    height: 2px;
+    background-color: #00ab36;
+}
+
+.choices {
+    padding: 0;
+}
+.choice {
+    display: block;
+    padding: 13px;
+    margin: 10px 0;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid #ebebeb;
+    box-shadow: 0 3px 2px -2px rgb(0 0 0 / 13%);
+}
+
+/* クイズが正解のときのcssを指定 */
+.choice.correct {
+    color: #fff;
+    background-color: #287dff;
+}
+
+.choice.incorrect {
+    color: #fff;
+    background-color: #ff5128;
+}
+
+
+.quiz-result {
+    display: none;
+    padding: 17px;
+    background-color: #f5f5f5;
+}
+
+.quiz-result-title{
+    font-weight: 600;
+    font-size: 1pc;
+    line-height: 20px;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-top: 0;
+}
+.quiz-result-title.quiz-result-successed {
+    border-bottom: 3px solid #287dff;
+}
+
+.quiz-result-title.quiz-result-failed {
+    border-bottom: 3px solid #ff5128;
+}
+
+.quiz-result-description {
+    margin: 0;
+    padding: 0;
+}
+/*--- footer ---*/
