@@ -1,21 +1,28 @@
 let q_num = 0;
 
-function Question(name, correct, incre1, incre2, img) {
+var Question = function (name, correct, incre1, incre2, img) {
     // __init__
     q_num++;
     this.name = name;
     this.correct = correct;
     this.incre1 = incre1;
     this.incre2 = incre2;
-    this.num = q_num;
-    this.img = img;
 
-    cor_num = "0-" + String(q_num) + "-2";
-    incr1_num = "0-" + String(q_num) + "-1";
-    incre2_num = "0-" + String(q_num) + "-0";
-    this.answers = {cor_unm: true, incre1: false, incre2: false};
+    this.getImgUrls = function(){
+        return "./img/quizes/" + img;
+    }
+    // 答えの番号を生成（ランダム実装はまだ）
+    this.answers = function () {
+        cor_num = "0-" + String(q_num) + "-2";
+        incr1_num = "0-" + String(q_num) + "-1";
+        incre2_num = "0-" + String(q_num) + "-0";
+        return {cor_unm: true, incre1: false, incre2: false};
+    }   
+
 };
 
+// questions はテスト用
+const questions = { "0-1-0": false, "0-1-1": false, "0-1-2": true };
 q1 = Question("高輪", "たかなわ", "こうわ", "たかわ", 1, "takanawa.png");
 q2 = Question("亀戸", "かめいど", "かめど", "かめと", 2, "takanawa.png");
 
