@@ -68,6 +68,9 @@ header .btn {
 
 
 /*--- クイズ内容  ---*/
+.quiz {
+    margin: 30px 0;
+}
 .quiz h1 {
     font-size: 17px;
     line-height: 20px;
