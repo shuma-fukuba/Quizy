@@ -9,7 +9,7 @@ function Question(name, correct, incre1, incre2, img) {
     this.getImgUrls = function(){
         return "./img/quizes/" + img;
     };
-    // 答えの番号を生成（ランダム実装はまだ）
+    // 選択肢の配列を返す
     this.answers = function () {
         cor_num = "0-" + String(this.num) + "-2";
         incr1_num = "0-" + String(this.num) + "-1";
@@ -17,7 +17,9 @@ function Question(name, correct, incre1, incre2, img) {
         const cor_choice = new Choice(cor_num, correct, true, this.num);
         const inc_choice1 = new Choice(incr1_num, incre1, false, this.num);
         const inc_choice2 = new Choice(incre2_num, incre2, false, this.num);
-        return [cor_choice, inc_choice1, inc_choice2];
+        let answers = [cor_choice, inc_choice1, inc_choice2];
+        answers = shuffle(answers);
+        return answers;
     };
 };
 
@@ -62,3 +64,13 @@ function checkAnswer(num, isCorrect, q) { // Choice型の各変数
         failed[0].innerText = "不正解！";
     }
 };
+
+
+// 配列をシャッフルする関数
+const shuffle = ([...array]) => {
+    for (let i = array.length - 1; i >= 0; i--){
+        const j = Math.floor(Math.random() * (i+1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
