@@ -10,11 +10,11 @@ function checkAnswer(a, b, c) {
         // cssに正解クラスを追加
         element.classList.add("correct");
         let successed = quiz_result.getElementsByClassName("quiz-result-title");
-        successed.classList.add("quiz-result-successed");
+        successed[0].classList.add("quiz-result-successed");
     } else {
         // cssに不正解クラスを追加
         element.classList.add("incorrect");
         let failed = quiz_result.getElementsByClassName("quiz-result-title")
-        failed.classList.add("quiz-result-failed");
+        failed[0].classList.add("quiz-result-failed");
     }
 };
