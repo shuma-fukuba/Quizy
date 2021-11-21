@@ -125,8 +125,6 @@ window.onload = function(){
         </div>
 </section>`;
     };
-    console.log(questionHtml);
     let articleTag = document.getElementById("questions");
-    console.log("articleTag: " + articleTag);
     articleTag.innerHTML = questionHtml;
 }
