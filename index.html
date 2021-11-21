@@ -30,53 +30,38 @@
             <div class="main-nav">
                 <div class="nav-bar">
                     <div class="nav-content">
-                        <img src="#" alt="クイズ">
-                        <p>クイズ</p>
+                        <a href="#">
+                            <img src="#" alt="クイズ">
+                            <span>クイズ</span>
+                        </a>
                     </div>
                     <div class="nav-content">
-                        <img src="#" alt="診断">
-                        <p>診断</p>
+                        <a href="#">
+                            <img src="#" alt="診断">
+                            <span>診断</span>
+                        </a>
                     </div>
                     <div class="nav-content">
-                        <img src="#" alt="お絵かき診断">
-                        <p>お絵かき診断</p>
+                        <a href="#">
+                            <img src="#" alt="お絵かき診断">
+                            <span>お絵かき診断</span>
+                        </a>
                     </div>
                     <div class="nav-content">
-                        <img src="#" alt="ログイン">
-                        <p>ログイン</p>
+                        <a href="#">
+                            <img src="#" alt="ログイン">
+                            <span>ログイン</span>
+                        </a>
                     </div>
                 </div>
                 <div class="news">
+                    <a href="#"> 新登場！絵を描いてしりとりするゲームがKuizyに登場！詳しくは<span style="color: #287dff;">こちら</span>！</a>
                 </div>
             </div>
 
             <div class="main-content">
-                <!-- クイズタイトル -->
-
                 <!-- クイズ -->
-                <article>
-                    <script>
-                        for (question of questions) {
-                            let choices = ``;
-                            for (c of question.answers()) {
-                                console.log(c);
-                                choices += `<li class="choice" id="${c.num}" onclick="checkAnswer('${c.num}', ${c.isCorrect}, ${c.q_num}); choiceDisabled(${question.num});">${c.sel}</li>`;
-                            };
-
-                            document.write(`
-                        <section class="quiz">
-                            <h1>${question.num}この地名はなんて読む?</h1>
-                            <img src=${question.getImgUrls()} alt="${question.name}">
-                            <ul class ="choices">${choices}
-                            </ul>
-                            <div class ="quiz-result" id="a-${question.num}">
-                                <p class ="quiz-result-title"></p>
-                                <p class ="quiz-result-description">正解は「${question.correct}」です！</p>
-                                </div>
-                        </section>
-                        `);
-                        };
-                    </script>
+                <article id="questions">
                 </article>
             </div>
         </main>
