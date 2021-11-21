@@ -27,9 +27,15 @@ function Question(name, correct, incrrect1, incrrect2, img) {
         answers = shuffle(answers);
         for (let i = 0; i < CHOICELENGTH; i++){
             answers[i].choiceNum = "0-" + String(this.num) + "-" + String(i);
-            console.log(answers[i]);
         }
         return answers;
+    };
+    this.getAnswerSentense = function() {
+        if (this.num == 9){
+            return `江戸川区にあります。`;
+        } else {
+            return `正解は「${this.correct}」です！`;
+        }
     };
     this.answers = this.getAnswers();
 };
@@ -103,7 +109,6 @@ const kogure = new Question("小榑", "こぐれ", "こしゃく", "こばく", 
 const questions = [takanawa, kameido, koujimachi, onarimon, todoroki, shakuji, zoushiki, okachimachi, shishibone, kogure];
 
 
-
 window.onload = function(){
     let questionHtml = ``;
     for (let question of questions) {
@@ -121,7 +126,7 @@ window.onload = function(){
     </ul>
     <div class ="quiz-result" id="a-${question.num}">
         <p class ="quiz-result-title"></p>
-        <p class ="quiz-result-description">正解は「${question.correct}」です！</p>
+        <p class ="quiz-result-description">${question.getAnswerSentense()}</p>
         </div>
 </section>`;
     };
