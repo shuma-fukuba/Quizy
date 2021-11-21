@@ -30,8 +30,9 @@ function Question(name, correct, incrrect1, incrrect2, img) {
         }
         return answers;
     };
+
     this.getAnswerSentense = function() {
-        if (this.num == 9){
+        if (this.name == "鹿骨"){
             return `江戸川区にあります。`;
         } else {
             return `正解は「${this.correct}」です！`;
